@@ -39,16 +39,8 @@ const Certificates = () => {
           Certifications
         </p>
         <h2 className="mb-5 bg-gradient-to-r from-amber-200 via-sky-200 to-cyan-300 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
-          Koleksi 12 Sertifikat
+          Sertifikat Saya
         </h2>
-        <p className="text-base leading-7 text-slate-300 md:text-lg">
-          Setiap kartu menampilkan gambar sertifikat langsung. Simpan file Anda di folder
-          <span className="font-semibold text-slate-100"> public/certificates </span>
-          dengan nama
-          <span className="font-semibold text-slate-100"> certificate-01.jpg </span>
-          sampai
-          <span className="font-semibold text-slate-100"> certificate-12.jpg</span>.
-        </p>
       </motion.div>
 
       <motion.div
