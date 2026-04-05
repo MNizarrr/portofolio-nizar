@@ -7,6 +7,7 @@ const Navbar = () => {
     { id: 'hero', label: 'Home' },
     { id: 'skills', label: 'Skills' },
     { id: 'education', label: 'Education' },
+    { id: 'certificates', label: 'Certificates' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
   ];

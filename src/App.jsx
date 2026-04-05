@@ -3,10 +3,10 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Education from './components/Education';
+import Certificates from './components/Certificates';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { Link } from 'react-scroll';
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -39,6 +39,11 @@ function App() {
       <section id="education" className="section-padding">
         <Education />
       </section>
+
+      {/* Certificates Section */}
+      <section id="certificates" className="section-padding bg-slate-800/40">
+        <Certificates />
+      </section>
       
       {/* Projects Section */}
       <section id="projects" className="section-padding bg-slate-800/50">
@@ -57,4 +62,3 @@ function App() {
 }
 
 export default App;
-
