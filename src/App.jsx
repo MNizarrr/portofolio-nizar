@@ -21,42 +21,54 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100 overflow-x-hidden">
-      {/* Navbar */}
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+    <div className="w-full min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100" style={{
+      backgroundImage: 'linear-gradient(135deg, #0f172a 0%, #1e1b4b 25%, #0f172a 50%, #1e293b 75%, #0f172a 100%)'
+    }}>
+      {/* Animated background elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob" />
+        <div className="absolute top-40 left-0 w-96 h-96 bg-violet-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000" />
+        <div className="absolute -bottom-8 right-20 w-96 h-96 bg-indigo-600/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000" />
+      </div>
       
-      {/* Hero Section */}
-      <section id="hero" className="section-padding min-h-screen flex items-center">
-        <Hero />
-      </section>
-      
-      {/* Skills Section */}
-      <section id="skills" className="section-padding bg-slate-800/50">
-        <Skills />
-      </section>
-      
-      {/* Education Section */}
-      <section id="education" className="section-padding">
-        <Education />
-      </section>
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Navbar */}
+        <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+        
+        {/* Hero Section */}
+        <section id="hero" className="pt-32 pb-20 min-h-screen flex items-center">
+          <Hero />
+        </section>
+        
+        {/* Skills Section */}
+        <section id="skills" className="py-20 border-t border-purple-500/10">
+          <Skills />
+        </section>
+        
+        {/* Education Section */}
+        <section id="education" className="py-20 border-t border-purple-500/10">
+          <Education />
+        </section>
 
-      {/* Certificates Section */}
-      <section id="certificates" className="section-padding bg-slate-800/40">
-        <Certificates />
-      </section>
-      
-      {/* Projects Section */}
-      <section id="projects" className="section-padding bg-slate-800/50">
-        <Projects />
-      </section>
-      
-      {/* Contact Section */}
-      <section id="contact" className="section-padding">
-        <Contact />
-      </section>
-      
-      {/* Footer */}
-      <Footer />
+        {/* Certificates Section */}
+        <section id="certificates" className="py-20 border-t border-purple-500/10">
+          <Certificates />
+        </section>
+        
+        {/* Projects Section */}
+        <section id="projects" className="py-20 border-t border-purple-500/10">
+          <Projects />
+        </section>
+        
+        {/* Contact Section */}
+        <section id="contact" className="py-20 border-t border-purple-500/10">
+          <Contact />
+        </section>
+        
+        {/* Footer */}
+        <Footer />
+      </div>
     </div>
   );
 }

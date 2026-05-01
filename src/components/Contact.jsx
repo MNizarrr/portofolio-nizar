@@ -29,9 +29,9 @@ const Contact = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-4xl md:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+        className="text-4xl md:text-5xl font-bold text-center mb-20 bg-gradient-to-r from-purple-400 via-violet-400 to-indigo-400 bg-clip-text text-transparent"
       >
-        Let's Connect
+        Mari Terhubung
       </motion.h2>
       
       <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
@@ -43,18 +43,18 @@ const Contact = () => {
           className="space-y-8"
         >
           <div>
-            <h3 className="text-2xl font-bold text-slate-100 mb-4">Get In Touch</h3>
+            <h3 className="text-2xl font-bold text-slate-100 mb-4">Hubungi Saya</h3>
             <p className="text-slate-400 leading-relaxed mb-8">
-              I'm always open to discussing new opportunities, interesting ideas, 
-              or just saying hello. Let's create something great together!
+              Saya selalu terbuka untuk membahas peluang baru, ide menarik, atau sekadar berkenalan. 
+              Mari ciptakan sesuatu yang luar biasa bersama-sama!
             </p>
           </div>
           
           <div className="space-y-6">
             {[
-              { icon: Mail, label: 'nizar@example.com', value: 'nizar@example.com' },
-              { icon: Phone, label: 'Phone', value: '+216 12 345 678' },
-              { icon: MapPin, label: 'Location', value: 'Tunis, Tunisia' },
+              { icon: Mail, label: 'Email', value: 'nizar@example.com' },
+              { icon: Phone, label: 'Telepon', value: '+62 812 345 678' },
+              { icon: MapPin, label: 'Lokasi', value: 'Indonesia' },
             ].map((item, index) => (
               <motion.div
                 key={item.label}
@@ -62,9 +62,9 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-start gap-4 p-4 glass rounded-xl hover:bg-slate-800/50 transition-all border border-slate-700/50"
+                className="flex items-start gap-4 p-4 rounded-xl border border-purple-500/30 bg-slate-900/50 hover:bg-slate-800/70 hover:border-purple-500/60 transition-all duration-300"
               >
-                <item.icon className="w-8 h-8 text-blue-400 mt-1 flex-shrink-0" />
+                <item.icon className="w-8 h-8 text-purple-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-slate-400 font-medium">{item.label}</p>
                   <p className="text-slate-200 font-semibold">{item.value}</p>
@@ -79,81 +79,84 @@ const Contact = () => {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="glass p-8 rounded-3xl shadow-2xl border border-slate-700/50"
+          className="relative group"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <Label htmlFor="name" className="mb-2 block text-slate-200">
-                Your Name
-              </Label>
-              <TextInput
-                id="name"
-                name="name"
-                type="text"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="bg-slate-800/50 border-slate-600 focus:border-blue-500 focus:ring-blue-500"
-                placeholder="John Doe"
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="email" className="mb-2 block text-slate-200">
-                Your Email
-              </Label>
-              <TextInput
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="bg-slate-800/50 border-slate-600 focus:border-blue-500 focus:ring-blue-500"
-                placeholder="john@example.com"
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="message" className="mb-2 block text-slate-200">
-                Your Message
-              </Label>
-              <Textarea
-                id="message"
-                name="message"
-                rows={5}
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="bg-slate-800/50 border-slate-600 focus:border-blue-500 focus:ring-blue-500 resize-vertical"
-                placeholder="Tell me about your project..."
-              />
-            </div>
-            
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="pt-4"
-            >
-              <Button
-                type="submit"
-                fullSized
-                className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 shadow-xl hover:shadow-purple-500/25 font-bold text-lg py-4 h-auto"
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-violet-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-300" />
+          <div className="relative p-8 rounded-3xl shadow-2xl border border-purple-500/30 bg-slate-900/70 backdrop-blur-sm">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <Label htmlFor="name" className="mb-2 block text-slate-200">
+                  Nama Anda
+                </Label>
+                <TextInput
+                  id="name"
+                  name="name"
+                  type="text"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="bg-slate-800/50 border-slate-600 focus:border-purple-500 focus:ring-purple-500"
+                  placeholder="Masukkan nama Anda"
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="email" className="mb-2 block text-slate-200">
+                  Email Anda
+                </Label>
+                <TextInput
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="bg-slate-800/50 border-slate-600 focus:border-purple-500 focus:ring-purple-500"
+                  placeholder="email@example.com"
+                />
+              </div>
+              
+              <div>
+                <Label htmlFor="message" className="mb-2 block text-slate-200">
+                  Pesan Anda
+                </Label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="bg-slate-800/50 border-slate-600 focus:border-purple-500 focus:ring-purple-500 resize-vertical"
+                  placeholder="Ceritakan tentang proyek Anda..."
+                />
+              </div>
+              
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="pt-4"
               >
-                <Send className="w-5 h-5 mr-2" />
-                Send Message
-              </Button>
-            </motion.div>
-            
-            {status && (
-              <motion.p
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="text-center p-4 bg-green-500/20 border border-green-500/50 text-green-300 rounded-xl font-medium"
-              >
-                {status}
-              </motion.p>
-            )}
-          </form>
+                <Button
+                  type="submit"
+                  fullSized
+                  className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 hover:from-purple-700 hover:via-violet-700 hover:to-indigo-700 shadow-xl hover:shadow-purple-500/25 font-bold text-lg py-4 h-auto"
+                >
+                  <Send className="w-5 h-5 mr-2" />
+                  Kirim Pesan
+                </Button>
+              </motion.div>
+              
+              {status && (
+                <motion.p
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center p-4 bg-purple-500/20 border border-purple-500/50 text-purple-300 rounded-xl font-medium"
+                >
+                  {status}
+                </motion.p>
+              )}
+            </form>
+          </div>
         </motion.div>
       </div>
     </div>

@@ -2,3 +2,80 @@
 @import "flowbite-react/plugin/tailwindcss";
 
 @source "../.flowbite-react/class-list.json";
+
+/* Ensure only one scrollbar */
+* {
+  scrollbar-width: none;
+}
+
+html {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  scrollbar-width: thin !important;
+}
+
+body {
+  overflow: hidden;
+}
+
+#root {
+  overflow: hidden;
+}
+
+@layer utilities {
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  @keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+}
+
+/* Single Scrollbar - Only on HTML */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(168, 85, 247, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgb(168, 85, 247) 0%, rgb(139, 92, 246) 50%, rgb(99, 102, 241) 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgb(196, 85, 231) 0%, rgb(167, 51, 234) 50%, rgb(149, 140, 248) 100%);
+  border: 1px solid rgba(196, 85, 231, 0.5);
+  box-shadow: 0 0 15px rgba(196, 85, 231, 0.8), 0 0 25px rgba(168, 85, 247, 0.6);
+}
+
+/* Firefox Scrollbar */
+html {
+  scrollbar-color: rgb(168, 85, 247) rgba(168, 85, 247, 0.1);
+}
