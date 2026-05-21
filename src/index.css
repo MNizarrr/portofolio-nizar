@@ -35,6 +35,37 @@ body {
     animation-delay: 4s;
   }
 
+  .animate-skill-marquee {
+    animation: skill-marquee 28s linear infinite;
+  }
+
+  .animate-skill-marquee-reverse {
+    animation: skill-marquee-reverse 32s linear infinite;
+  }
+
+  .animate-skill-marquee:hover,
+  .animate-skill-marquee-reverse:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes skill-marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+
+  @keyframes skill-marquee-reverse {
+    from {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
   @keyframes blob {
     0%, 100% {
       transform: translate(0, 0) scale(1);

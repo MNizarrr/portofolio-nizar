@@ -29,7 +29,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-slate-400 leading-relaxed max-w-md">
-              Membangun masa depan, satu baris kode dalam satu waktu.
+              Membangun masa depan melalui code
             </p>
           </div>
           
@@ -88,7 +88,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-purple-500/10 pt-8 text-center text-sm text-slate-500">
           <p>
-            © 2024 Nizar Portfolio. Dibangun dengan ❤️ menggunakan React, TailwindCSS & Framer Motion.
+            © 2025 Nizar Portfolio
           </p>
           <p className="mt-2">
             Dirancang & Dikembangkan oleh <span className="text-slate-300 font-medium">Nizar</span>

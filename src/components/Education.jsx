@@ -7,15 +7,15 @@ const education = [
     institution: 'SD Negeri',
     period: '2015 - 2021',
     description: 'Membangun fondasi belajar, kedisiplinan, dan kemampuan dasar di bidang akademik umum.',
-    location: 'Indonesia',
+    location: 'Kabupaten Bogor',
     accent: 'from-emerald-500/25 via-teal-500/10 to-transparent',
   },
   {
-    title: 'SPMPN 1 Cisarua',
+    title: 'SMPN 01 Cisarua',
     institution: 'SMP Negeri',
     period: '2021 - 2024',
     description: 'Memperluas wawasan akademik serta mulai terbiasa dengan pembelajaran yang lebih terstruktur dan mandiri.',
-    location: 'Indonesia',
+    location: 'Kabupaten Bogor',
     accent: 'from-sky-500/25 via-cyan-500/10 to-transparent',
   },
   {
@@ -23,7 +23,7 @@ const education = [
     institution: 'SMK Swasta',
     period: '2024 - Now',
     description: 'Berfokus pada keterampilan yang lebih aplikatif, kesiapan kerja, dan penguatan minat pada bidang teknologi.',
-    location: 'Indonesia',
+    location: 'Kota Bogor',
     accent: 'from-amber-500/25 via-orange-500/10 to-transparent',
   },
 ];

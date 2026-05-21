@@ -52,9 +52,9 @@ const Contact = () => {
           
           <div className="space-y-6">
             {[
-              { icon: Mail, label: 'Email', value: 'nizar@example.com' },
-              { icon: Phone, label: 'Telepon', value: '+62 812 345 678' },
-              { icon: MapPin, label: 'Lokasi', value: 'Indonesia' },
+              { icon: Mail, label: 'Email', value: 'nizarmuhamad.personal@gmail.com' },
+              { icon: Phone, label: 'Telepon', value: '+62 821 2542 2984' },
+              { icon: MapPin, label: 'Lokasi', value: 'Kecamatan Cisarua, Kabupaten Bogor, Provinsi Jawa Barat, Indonesia' },
             ].map((item, index) => (
               <motion.div
                 key={item.label}
@@ -128,7 +128,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="bg-slate-800/50 border-slate-600 focus:border-purple-500 focus:ring-purple-500 resize-vertical"
-                  placeholder="Ceritakan tentang proyek Anda..."
+                  placeholder="Masukan Pesan Anda..."
                 />
               </div>
               
