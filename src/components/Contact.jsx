@@ -1,27 +1,10 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import { useState } from 'react';
 import { TextInput, Textarea, Button, Label } from 'flowbite-react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [status, setStatus] = useState('');
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Mock submission
-    setStatus('Thank you! Your message has been sent. 🚀');
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setStatus(''), 5000);
-  };
+  const [state, handleSubmit] = useForm('xredabeo');
 
   return (
     <div className="container mx-auto px-4">
@@ -52,7 +35,7 @@ const Contact = () => {
           
           <div className="space-y-6">
             {[
-              { icon: Mail, label: 'Email', value: 'nizarmuhamad.personal@gmail.com' },
+              { icon: Mail, label: 'Email', value: 'nizarmuhammad.work@gmail.com' },
               { icon: Phone, label: 'Telepon', value: '+62 821 2542 2984' },
               { icon: MapPin, label: 'Lokasi', value: 'Kecamatan Cisarua, Kabupaten Bogor, Provinsi Jawa Barat, Indonesia' },
             ].map((item, index) => (
@@ -92,8 +75,6 @@ const Contact = () => {
                   id="name"
                   name="name"
                   type="text"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="bg-slate-800/50 border-slate-600 focus:border-purple-500 focus:ring-purple-500"
                   placeholder="Masukkan nama Anda"
@@ -108,11 +89,15 @@ const Contact = () => {
                   id="email"
                   name="email"
                   type="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="bg-slate-800/50 border-slate-600 focus:border-purple-500 focus:ring-purple-500"
                   placeholder="email@example.com"
+                />
+                <ValidationError
+                  prefix="Email"
+                  field="email"
+                  errors={state.errors}
+                  className="mt-2 block text-sm text-red-300"
                 />
               </div>
               
@@ -124,11 +109,15 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows={5}
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   className="bg-slate-800/50 border-slate-600 focus:border-purple-500 focus:ring-purple-500 resize-vertical"
                   placeholder="Masukan Pesan Anda..."
+                />
+                <ValidationError
+                  prefix="Message"
+                  field="message"
+                  errors={state.errors}
+                  className="mt-2 block text-sm text-red-300"
                 />
               </div>
               
@@ -138,21 +127,22 @@ const Contact = () => {
               >
                 <Button
                   type="submit"
+                  disabled={state.submitting}
                   fullSized
                   className="bg-gradient-to-r from-purple-600 via-violet-600 to-indigo-600 hover:from-purple-700 hover:via-violet-700 hover:to-indigo-700 shadow-xl hover:shadow-purple-500/25 font-bold text-lg py-4 h-auto"
                 >
                   <Send className="w-5 h-5 mr-2" />
-                  Kirim Pesan
+                  {state.submitting ? 'Mengirim...' : 'Kirim Pesan'}
                 </Button>
               </motion.div>
               
-              {status && (
+              {state.succeeded && (
                 <motion.p
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   className="text-center p-4 bg-purple-500/20 border border-purple-500/50 text-purple-300 rounded-xl font-medium"
                 >
-                  {status}
+                  Terima kasih! Pesan Anda berhasil dikirim.
                 </motion.p>
               )}
             </form>
