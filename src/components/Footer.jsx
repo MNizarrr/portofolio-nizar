@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-scroll';
 
 const Footer = () => {
@@ -64,10 +64,10 @@ const Footer = () => {
               <h4 className="text-xl font-bold text-slate-100 mb-4">Ikuti Saya</h4>
               <div className="flex gap-4">
                 {[
+                  { icon: FaInstagram, href: 'https://www.instagram.com/nizarryu/', label: 'Instagram' },
                   { icon: FaGithub, href: 'https://github.com/MNizarrr', label: 'Github' },
                   { icon: FaLinkedin, href: 'https://www.linkedin.com/in/nizar-muhammad-598333330/', label: 'LinkedIn' },
-                  // { icon: FaTwitter, href: 'https://twitter.com/nizar', label: 'Twitter' },
-                    { icon: FaEnvelope, href: 'mailto:nizarmuhammad.work@gmail.com', label: 'Email' },
+                  { icon: FaEnvelope, href: 'mailto:nizarmuhammad.work@gmail.com', label: 'Email' },
                 ].map((social) => (
                   <a
                     key={social.label}
